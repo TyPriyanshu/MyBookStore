@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE</title>
+    <script>
+       function addToCart(description, price, quantity) {
+            // Get the existing cart items from local storage or initialize an empty array
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the new item to the cart
+            cartItems.push({ description: description, price: price, quantity: quantity });
+
+            // Save the updated cart back to local storage
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Alert the user that the item has been added to the cart (you can customize this part)
+            alert('Item added to Cart!');
+        
+        }
+    </script>
+    <style>
+        th {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table border="2px">
+        <tr>
+            <th><img src="C:/Users/Dell/Desktop/WD practical/image/BTech-Logo-332.png" height="50px" width="50px"></th>
+            <th colspan="4">B.TECH BOOK STORE</th>
+        </tr>
+        <tr>
+            <td><a href="home.html">HOME</a></td>
+            <td><a href="login.html">LOGIN</a></td>
+            <td><a href="registration.html">REGISTRATION</a></td>
+            <td>CATALOGUE</td>
+            <td><a href="cart.html">CART</a></td>
+        </tr>
+        <tr>
+            <th><a href="cse.html">CSE</a></th>
+            <td colspan="4" rowspan="5" align="center">
+                <table border="1" cellpadding="10" style="width: 100%;">
+                    <tr>
+                        <td><img src="C:/Users/Dell/Desktop/WD practical/image/CIVIL1.jpg" height="35%" width="35%"></td>
+                        <td>BOOK: BASIC CE<br>
+                            AUTHOR: SS BAVIKATTI<br>
+                            PUBLISHER: NEW AGE INTERNATIONAL PUBLICATION<br><br></td>
+                        <td>76<br></td>
+                        <td><button type="button" onclick="addToCart('BASIC CE', 76, 1)">Add to Cart</button><br><br><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><img src="C:/Users/Dell/Desktop/WD practical/image/CIVIL2.jpg" height="35%" width="35%"></td>
+                        <td>BOOK: CIVIL ENGINEERING<br>
+                            AUTHOR: SP,SS GUPTA<br>
+                            PUBLISHER: CBS PUBLICATION<br></td>
+                        <td>64</td>
+                        <td><button type="button" onclick="addToCart('CBS', 64, 1)">Add to Cart</button></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><a href="ece.html">ECE</a></th>
+        </tr>
+        <tr>
+            <th><a href="eee.html">EEE</a></th>
+        </tr>
+        <tr>
+            <th><a href="civil.html">CIVIL</a></th>
+        </tr>
+    </table>
+</body>
+
+</html>

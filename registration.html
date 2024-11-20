@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+       
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+           
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <html>
+        
+        <form method="POST" action="home.html" onsubmit="return jsvalidation()">
+            <table border="1"  onsubmit="return jsvalidation()">
+                <tr>
+            
+            <td>first name:</td>
+           <td> <input type="text" id='name' name="firstname" placeholder="Enter your first name" value="">
+            <br></td></tr><tr>
+           
+                <td>last name:</td>
+                <td>
+                 <input type="text" id="lname" name="lname" placeholder="Enter your last name" value="">
+                 <br></td></tr>
+            <tr>
+            <td>password:</td>
+            
+            <td>
+            <input type="password" id="password" name="password" placeholder="Set your password" value="">
+            <br></td></tr>
+            <tr>
+           
+                <td>email</td>
+            
+            <td>
+            <input type="email"  id="email" name="emailid" placeholder="Enter your email" value="">
+            <br></td></tr>
+
+            <tr>
+           <td>mobile number:</td>
+                <td>
+            
+            <input type="number" id="number" name="mobile" placeholder="Enter your mobile no." value="">
+            <br></td></tr>
+            <tr>
+           <td>sex:</td>
+                <td>
+                    <label for ="male">Male</label>
+            <input type="radio" name="gender" value="Male">
+            <label for ="fmale">Female</label>
+            <input type="radio" name="gender" value="Female">
+            <label for ="others">Others</label>
+            <input type="radio" name="gender" value="Others">
+            
+            </td></tr>
+            <tr>
+           <td>DOB</td>
+                <td>
+            <input type="date" name="dob" placeholder="Enter your date of birth" value="">
+            <br></td></tr>
+            <tr>
+           <td>languages known:</td>
+                <td>
+            <input type="checkbox" name="ENGLISH" value="ENGLISH">
+            <label for ="ENGLISH">ENGLISH</label>
+            <input type="checkbox" name="HINDI" value="HINDI"> 
+            <label for ="HINDI">HINDI</label>
+            <input type="checkbox" name="TELGU" value="TELGU">
+            <label for ="TELGU">TELGU</label>
+            <input type="checkbox" name="TAMIL" value="TAMIL">
+            <label for ="TAMIL">TAMIL</label><br></td></tr>
+            <tr>
+                <td>address</td>
+           
+                <td>
+            
+            <textarea  name="address" rows="4"   placeholder="Enter your address"></textarea>
+            <br></td></tr></table>
+            <input type="submit">
+            <input type="reset">
+            
+   
+    
+        </form>
+    </html>
+    </form>
+    <script>
+          function jsvalidation() {
+            const name = document.getElementById("name").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const number = document.getElementById("number").value;
+            if(name=="" || password=="" || number=="" || email==""){
+                alert("all fields are required");
+                return false;
+            }
+
+            if (name.length <= 6) {
+                alert("Please enter a name greater than 6 characters");
+                return false;
+            }
+            if(!/^[a-zA-Z]+$/.test(name)){
+                alert("no characters required");
+                return false;
+            }
+
+            if (password.length <= 6) {
+                alert("Please enter a password greater than 6 characters.");
+                return false;
+            }
+
+            if (number.length !== 10 || isNaN(number)) {
+                alert("Please enter a 10-digit number; no characters are allowed.");
+                return false;
+            }
+
+            if ( !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+             
+                alert("Email should be in form of name@domain.com");
+                return false;
+            }
+
+            
+
+            return true; 
+        }
+       
+    
+    </script>
+
+</body>
+</html>
